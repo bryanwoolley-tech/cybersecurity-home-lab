@@ -1,100 +1,16 @@
 # Cybersecurity Home Lab
 
-## Objective
-
-Build a hands-on cybersecurity home lab to develop practical skills in Linux administration, networking, system administration, SOC analysis, vulnerability assessment, and ethical hacking.
-
-This repository documents the construction and continued development of a virtual cybersecurity environment using Kali Linux and Ubuntu Server. Each completed lab includes the objective, environment, commands used, results, screenshots, findings, and lessons learned.
+Hands-on cybersecurity lab environment built to develop practical skills in networking, Linux administration, network reconnaissance, packet analysis, security monitoring, and incident investigation.
 
 ## Lab Environment
 
-### Host System
-
-- Windows 11
-- Oracle VirtualBox 7.2
-- 32 GB RAM
-- Intel Core i5 processor
-
-### Kali Linux
-
-- Kali Linux virtual machine
-- 6 GB RAM
-- 4 virtual CPUs
-- VirtualBox prebuilt Kali image
-- Adapter 1: NAT
-- Adapter 2: VirtualBox Internal Network
-- Internal network interface: `eth1`
-- Internal lab IP: `192.168.56.10/24`
-- Clean baseline snapshot created
-
-### Ubuntu Server
-
-- Ubuntu Server 26.04.1 LTS
-- 4 GB RAM
-- 2 virtual CPUs
-- 40 GB virtual disk
-- Hostname: `ubuntu-server-lab`
-- Adapter 1: NAT
-- Adapter 2: VirtualBox Internal Network
-- NAT interface: `enp0s3`
-- NAT IP during setup: `10.0.2.15`
-- Internal lab interface: `enp0s8`
-- Internal lab IP: `192.168.56.20/24`
-- OpenSSH Server installed
-- SSH service verified active and running
-- Installation completed successfully
-
-## Network Architecture
-
-The lab currently uses two virtual network adapters on each virtual machine.
-
-### Adapter 1 — NAT
-
-Provides Internet access for:
-
-- Operating system updates
-- Package installation
-- Software repositories
-- Internet connectivity
-
-### Adapter 2 — Internal Network
-
-Provides isolated communication between lab systems.
-
-Internal network name:
-
-`cyber-lab`
-
-Current lab addressing:
-
-| System | Interface | IP Address |
-|---|---|---|
-| Kali Linux | `eth1` | `192.168.56.10/24` |
-| Ubuntu Server | `enp0s8` | `192.168.56.20/24` |
-
-This design allows Kali and Ubuntu to communicate with one another while maintaining a separate interface for Internet access.
-
-## Skills Being Practiced
-
-- Linux administration
-- Virtualization
-- Virtual machine provisioning
-- TCP/IP networking
-- Network interface configuration
-- Static IP addressing
-- SSH
-- Remote system administration
-- Nmap
+- Kali Linux
+- Ubuntu Server
+- Oracle VirtualBox
 - Wireshark
-- Linux authentication logs
-- Firewall configuration
-- System hardening
-- Vulnerability assessment
-- SOC investigation
-- SIEM analysis
-- Ethical hacking in an authorized lab environment
-- Technical documentation
-- GitHub portfolio development
+- Nmap
+- OpenSSH
+- Isolated virtual lab network
 
 ## Lab Progress
 
@@ -105,7 +21,7 @@ This design allows Kali and Ubuntu to communicate with one another while maintai
 - [x] Isolated Kali-to-Ubuntu network configuration
 - [x] Kali-to-Ubuntu connectivity
 - [x] SSH remote access from Kali to Ubuntu
-- [ ] Nmap service discovery
+- [x] Nmap service discovery
 - [ ] Linux authentication log analysis
 - [ ] Firewall configuration and testing
 - [ ] Wireshark packet analysis
@@ -114,67 +30,92 @@ This design allows Kali and Ubuntu to communicate with one another while maintai
 - [ ] Additional vulnerable target systems
 - [ ] Active Directory security lab
 
-## Completed Labs
+---
 
-### Lab 01 — Kali to Ubuntu Network Connectivity and SSH
+# Completed Labs
 
-Built an isolated VirtualBox network between Kali Linux and Ubuntu Server, configured dedicated lab IP addresses, verified network connectivity, and successfully established an SSH session from Kali to Ubuntu.
+## Lab 01 — Network Connectivity & SSH
 
-[View Lab 01](01-network-connectivity/README.md)
+Built an isolated virtual network between Kali Linux and Ubuntu Server.
 
-## Planned Labs
+### Skills Demonstrated
 
-### Lab 02 — Nmap Service Discovery
+- Virtual machine networking
+- Linux network configuration
+- IP addressing
+- ICMP connectivity testing
+- OpenSSH configuration
+- SSH remote administration
 
-Use Kali Linux to perform authorized network and service discovery against the Ubuntu Server.
+[View Lab 01](01-network-connectivity/)
 
-Planned activities include:
+---
 
-- Host availability testing
-- Port discovery
-- Service enumeration
-- Service version identification
-- Analysis of exposed services
+## Lab 02 — Nmap Service Discovery
 
-### Lab 03 — Linux Authentication Log Analysis
+Performed authorized network reconnaissance from Kali Linux against an Ubuntu Server target.
 
-Generate authentication activity and analyze Ubuntu logs to identify successful and unsuccessful SSH activity.
+### Activities
 
-### Lab 04 — Firewall Configuration
+- Verified target availability
+- Performed TCP port discovery
+- Identified exposed services
+- Conducted service/version detection
+- Identified SSH on TCP port 22
+- Captured Nmap-generated network traffic with Wireshark
+- Analyzed TCP and SSH traffic
+- Preserved the packet capture as PCAPNG evidence
 
-Configure and test Ubuntu firewall rules while observing their effect on network connectivity and exposed services.
+### Tools
 
-### Lab 05 — Wireshark Packet Analysis
+`Nmap` `Wireshark` `Kali Linux` `Ubuntu Server` `OpenSSH`
 
-Capture and analyze lab traffic including:
+### Evidence
+
+The Lab 02 repository contains:
+
+- Technical lab documentation
+- Nmap scan evidence
+- Wireshark packet analysis screenshot
+- Original `.pcapng` packet capture
+
+[View Lab 02](02-nmap-service-discovery/)
+
+---
+
+# Upcoming Labs
+
+## Lab 03 — Linux Authentication Log Analysis
+
+Generate controlled SSH authentication activity and analyze Ubuntu authentication logs to distinguish successful and unsuccessful login attempts.
+
+## Lab 04 — Firewall Configuration & Testing
+
+Configure Ubuntu firewall rules and test how access-control changes affect network connectivity and exposed services.
+
+## Lab 05 — Wireshark Packet Analysis
+
+Capture and analyze:
 
 - ARP
 - ICMP
 - TCP
 - SSH
-- Source and destination addresses
+- Source and destination IP addresses
 - Source and destination ports
-- TCP connection establishment
+- TCP three-way handshake
 
-### Lab 06 — SOC-Style Investigation
+## Lab 06 — SOC-Style Investigation
 
-Generate simulated security events inside the authorized lab and investigate them from a defensive security perspective.
+Analyze simulated suspicious activity using network traffic, Linux logs, and other available evidence to develop an incident timeline and findings.
 
-### Future Expansion
+## Future Expansion
 
-Future additions may include:
-
-- Windows target virtual machine
-- Active Directory
-- Windows Server
-- Splunk
-- SIEM monitoring
-- Centralized logging
-- IDS/IPS
-- Vulnerability scanning
-- Web application security labs
-- Additional Linux servers
-- Security hardening exercises
+- SIEM / Splunk integration
+- Vulnerable target systems
+- Security monitoring
+- Incident detection
+- Active Directory security lab
 
 ## Documentation Standard
 
