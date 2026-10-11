@@ -189,15 +189,12 @@ In this lab, SSH is intentionally exposed because it is required for remote admi
 
 Add the screenshot showing both the Nmap terminal output and Wireshark capture here:
 
-```markdown
 ![Nmap service discovery with Wireshark](nmap-scan.png)
-```
 
 Optional packet capture:
 
 ```text
 nmap-service-discovery.pcapng
-```
 
 ## Result
 
