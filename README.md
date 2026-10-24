@@ -22,7 +22,7 @@ Hands-on cybersecurity lab environment built to develop practical skills in netw
 - [x] Kali-to-Ubuntu connectivity
 - [x] SSH remote access from Kali to Ubuntu
 - [x] Nmap service discovery
-- [ ] Linux authentication log analysis
+- [X] Linux authentication log analysis
 - [ ] Firewall configuration and testing
 - [ ] Wireshark packet analysis
 - [ ] SOC-style incident investigation
